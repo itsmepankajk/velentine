@@ -1,0 +1,31 @@
+<div class="mobile-wrapper">
+  @if (stage() === 'ask') {
+    <div class="card proposal-card">
+      <div class="heart pulse">❤️</div>
+      <h1>Vaidehi, will you be my Valentine?</h1>
+      <div class="btn-group">
+        <button class="btn-yes" (click)="sayYes()">Yes! 🥰</button>
+        <button
+          class="btn-no"
+          [style.top]="noBtnPos().top"
+          [style.left]="noBtnPos().left"
+          (touchstart)="moveNo($event)"
+          (click)="moveNo($event)">
+          No
+        </button>
+      </div>
+    </div>
+  } @else {
+    <div class="celebration-screen">
+      <h1 class="title">I knew it! ❤️</h1>
+      <div class="portrait-stack">
+        @for (p of photos(); track p.url) {
+          <div class="polaroid">
+            <img [src]="p.url" alt="Memory">
+            <p>{{ p.caption }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

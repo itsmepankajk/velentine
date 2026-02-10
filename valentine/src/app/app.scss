@@ -1,0 +1,70 @@
+.mobile-wrapper {
+  min-height: 100dvh;
+  width: 100vw;
+  // Ensure bg.jpg is also in your public folder
+  background: url('/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.proposal-card {
+  margin-top: 25dvh;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 85%;
+  height: fit-content;
+}
+
+.btn-yes {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 16px 45px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.btn-no {
+  position: absolute;
+  background: #eee;
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: none;
+  color: #888;
+  touch-action: none; // Essential for mobile
+}
+
+.portrait-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0 100px;
+}
+
+.polaroid {
+  background: white;
+  padding: 12px 12px 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 280px;
+  transform: rotate(-2deg);
+
+  img {
+    width: 100%;
+    aspect-ratio: 3/4; // Best for portrait photos
+    object-fit: cover;
+  }
+
+  p { color: #ff4d6d; margin-top: 10px; font-weight: bold; }
+  &:nth-child(even) { transform: rotate(2deg); }
+}
+
+.pulse { animation: beat 1s infinite alternate; }
+@keyframes beat { to { transform: scale(1.2); } }
