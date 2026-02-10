@@ -12,6 +12,8 @@ export class App {
   readonly stage = signal<'ask' | 'yes'>('ask');
   readonly noBtnPos = signal({ top: '65%', left: '50%' });
 
+
+
   // Update these filenames to match your files in the public folder
   readonly photos = signal([
     {
